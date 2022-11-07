@@ -16,8 +16,33 @@
 # |...
 # |return d
 
-def interactions():
-  pass
+from random import shuffle
+
+  #initial list
+sticks = ["-","--","---","----","-----"]
+
+  # mixing sticks
+def mix(my_list):
+  shuffle(my_list)
+  return(my_list)
+print(mix(sticks))
+
+  #chose number
+def  try_your_luck():
+  a_try = ""
+  while a_try not in ['1','2','3','4']:
+    a_try = input('chose your number ')
+  return int(a_try)
+
+
+#verify my try
+def verify_my_try(a_list, a_try):
+  if a_list[a_try - 1]== '-':
+    print("wash the dishes")
+  else:
+    print("this time you are safe")
+
+  print(f"you got {a_list[a_try -1]}")
 
 #####################################################################################################
 
